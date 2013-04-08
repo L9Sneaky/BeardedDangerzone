@@ -1,0 +1,21 @@
+[
+{
+  "modid": "BD",
+  "name": "Bearded Dangerzone",
+  "description": "An very early development mod!",
+  "version": "@VERSION@",
+  "url": "Comming soon :)",
+  "updateUrl": "",
+  "authorList": [
+    "N00byEdge",
+    "The testers! ;)"
+  ],
+  "credits": "By N00byEdge",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
