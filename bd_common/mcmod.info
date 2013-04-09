@@ -1,0 +1,17 @@
+[
+{
+  "modid": "N00byEdge_BeardedDangerzone",
+  "name": "Bearded Dangerzone",
+  "description": "Mod that adds tons of content while adding stuff you always wanted for vanilla!",
+  "version": "0.1a",
+  "mcversion": "1.5.1",
+  "logoFile": "/logo.png",
+  "url": "http://www.youtube.com/n00byedge",
+  "updateUrl": "",
+  "authors": ["N00byEdge"],
+  "credits": "The testers be awesome :)",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
