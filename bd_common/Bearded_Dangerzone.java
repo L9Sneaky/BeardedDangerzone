@@ -11,14 +11,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Bearded_Dangerzone
 {
-    public static final String modid = "N00byEdge_BeardedDangerzone";
+    public static final String modid = "N00byEdge_BD";
     
     public static Block beardBlock;
     
     @Init
     public void load(FMLInitializationEvent event)
     { 
-        //LOADING BEARD BLOCK
+        //BEARD BLOCK
         beardBlock = new BlockBeardBlock(461, Material.rock).setUnlocalizedName("Beard Block");
         
         GameRegistry.registerBlock(beardBlock, modid + beardBlock.getUnlocalizedName2());
