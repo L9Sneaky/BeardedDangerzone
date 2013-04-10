@@ -24,6 +24,7 @@ public class Bearded_Dangerzone
         GameRegistry.registerBlock(beardBlock, modid + beardBlock.getUnlocalizedName2());
         
         LanguageRegistry.addName(beardBlock, "Beard Block");
+        
+        GameRegistry.registerWorldGenerator(new WorldGen_BD());
     }
-            
 }
