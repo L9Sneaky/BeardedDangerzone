@@ -1,3 +1,7 @@
+package com.N00byEdge.BD;
+
+import com.N00byEdge.BD.block.BlockBeardBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import cpw.mods.fml.common.Mod;
@@ -14,17 +18,15 @@ public class Bearded_Dangerzone
     public static final String modid = "N00byEdge_BD";
     
     public static Block beardBlock;
+
     
     @Init
     public void load(FMLInitializationEvent event)
     { 
         //BEARD BLOCK
         beardBlock = new BlockBeardBlock(461, Material.rock).setUnlocalizedName("Beard Block");
-        
         GameRegistry.registerBlock(beardBlock, modid + beardBlock.getUnlocalizedName2());
-        
         LanguageRegistry.addName(beardBlock, "Beard Block");
-        
         GameRegistry.registerWorldGenerator(new WorldGen_BD());
     }
 }
