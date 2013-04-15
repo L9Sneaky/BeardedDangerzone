@@ -1,6 +1,9 @@
 package com.N00byEdge.BD.WorldGen;
 
 import java.util.Random;
+
+import com.N00byEdge.BD.Bearded_Dangerzone;
+
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
