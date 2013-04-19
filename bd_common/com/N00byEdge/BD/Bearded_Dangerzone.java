@@ -32,7 +32,7 @@ public class Bearded_Dangerzone {
     public static int rawBeardID;
 
     public static Item beardPiece;
-    public static int beardPieceID; 
+    public static int beardPieceID;
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -48,7 +48,7 @@ public class Bearded_Dangerzone {
 
         config.save();
         /* CONFIG END */
-        
+
         loadBlocks();
         loadItems();
     }
@@ -64,7 +64,7 @@ public class Bearded_Dangerzone {
     }
 
     /* Loading Blocks & Items, gets called during PreInitialization */
-    
+
     private void loadBlocks() {
         /* LOADING BEARD BLOCK */
         rawBeard = new BlockRawBeard(rawBeardID, Material.rock)
