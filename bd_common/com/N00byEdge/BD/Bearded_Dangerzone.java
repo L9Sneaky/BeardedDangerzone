@@ -15,8 +15,10 @@ import com.N00byEdge.BD.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -25,16 +27,12 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Bearded_Dangerzone {
-
-    /*
-     * Stuffs
-     */
-
+    /* Declaring stuff */
     public static Block rawBeard;
     public static int rawBeardID;
 
     public static Item beardPiece;
-    public static int beardPieceID;
+    public static int beardPieceID; 
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -43,30 +41,32 @@ public class Bearded_Dangerzone {
                 event.getSuggestedConfigurationFile());
         config.load();
 
-        rawBeardID = config.get(Configuration.CATEGORY_BLOCK, Blockname.RawBeard,
-                Ids.RawBeardIDDefault).getInt();
-        beardPieceID = config.get(Configuration.CATEGORY_ITEM, Itemname.BeardPiece,
-                Ids.BeardPieceIDDefault).getInt();
+        rawBeardID = config.get(Configuration.CATEGORY_BLOCK,
+                Blockname.RawBeard, Ids.RawBeardIDDefault).getInt();
+        beardPieceID = config.get(Configuration.CATEGORY_ITEM,
+                Itemname.BeardPiece, Ids.BeardPieceIDDefault).getInt();
 
         config.save();
         /* CONFIG END */
-    }
-
-    @Init
-    public void load(FMLInitializationEvent event) {
-        /*
-         * Loads Blocks & Items
-         */
+        
         loadBlocks();
         loadItems();
     }
 
-    /*
-     * Loading Blocks & Items, gets called during init
-     */
+    @Init
+    public void load(FMLInitializationEvent event) {
 
+    }
+
+    @PostInit
+    public void postInit(FMLPostInitializationEvent event) {
+
+    }
+
+    /* Loading Blocks & Items, gets called during PreInitialization */
+    
     private void loadBlocks() {
-        // LOADING BEARD BLOCK//
+        /* LOADING BEARD BLOCK */
         rawBeard = new BlockRawBeard(rawBeardID, Material.rock)
                 .setUnlocalizedName(Blockname.RawBeard);
         GameRegistry.registerBlock(rawBeard,
@@ -76,7 +76,7 @@ public class Bearded_Dangerzone {
     }
 
     private void loadItems() {
-        // LOADING BEARD PIECE//
+        /* LOADING BEARD PIECE */
         beardPiece = new ItemBeardPiece(beardPieceID)
                 .setUnlocalizedName(Itemname.BeardPiece);
         GameRegistry.registerItem(beardPiece,

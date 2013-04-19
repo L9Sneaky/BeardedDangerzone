@@ -9,11 +9,10 @@ public class ItemBeardPiece extends Item {
         super(id);
         this.setCreativeTab(CreativeTabs.tabMaterials);
     }
-    
+
     @Override
-    public void updateIcons(IconRegister iconReg)
-    {
+    public void updateIcons(IconRegister iconReg) {
         iconIndex = iconReg.registerIcon(this.getUnlocalizedName());
     }
-    
+
 }
