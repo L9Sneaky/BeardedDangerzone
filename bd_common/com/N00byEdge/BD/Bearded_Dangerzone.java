@@ -8,6 +8,10 @@ import net.minecraftforge.common.Configuration;
 import com.N00byEdge.BD.WorldGen.WorldGen_BD;
 import com.N00byEdge.BD.block.BlockRawBeard;
 import com.N00byEdge.BD.item.ItemBeardPiece;
+import com.N00byEdge.BD.lib.Blockname;
+import com.N00byEdge.BD.lib.Ids;
+import com.N00byEdge.BD.lib.Itemname;
+import com.N00byEdge.BD.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -18,10 +22,9 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = Bearded_Dangerzone.modid, name = "Bearded Dangerzone", version = "0.1a")
+@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Bearded_Dangerzone {
-    public static final String modid = "N00byEdge_BD";
 
     /*
      * Stuffs
@@ -40,10 +43,10 @@ public class Bearded_Dangerzone {
                 event.getSuggestedConfigurationFile());
         config.load();
 
-        rawBeardID = config.get(Configuration.CATEGORY_BLOCK, "Raw beard", 461)
-                .getInt();
-        beardPieceID = config.get(Configuration.CATEGORY_ITEM, "Beard Piece",
-                4891).getInt();
+        rawBeardID = config.get(Configuration.CATEGORY_BLOCK, Blockname.RawBeard,
+                Ids.RawBeardIDDefault).getInt();
+        beardPieceID = config.get(Configuration.CATEGORY_ITEM, Itemname.BeardPiece,
+                Ids.BeardPieceIDDefault).getInt();
 
         config.save();
         /* CONFIG END */
@@ -65,19 +68,19 @@ public class Bearded_Dangerzone {
     private void loadBlocks() {
         // LOADING BEARD BLOCK//
         rawBeard = new BlockRawBeard(rawBeardID, Material.rock)
-                .setUnlocalizedName("Beard Block");
+                .setUnlocalizedName(Blockname.RawBeard);
         GameRegistry.registerBlock(rawBeard,
-                modid + rawBeard.getUnlocalizedName2());
-        LanguageRegistry.addName(rawBeard, "Beard Block");
+                Reference.MODID + rawBeard.getUnlocalizedName2());
+        LanguageRegistry.addName(rawBeard, Blockname.RawBeard);
         GameRegistry.registerWorldGenerator(new WorldGen_BD());
     }
 
     private void loadItems() {
         // LOADING BEARD PIECE//
         beardPiece = new ItemBeardPiece(beardPieceID)
-                .setUnlocalizedName("Beard Piece");
+                .setUnlocalizedName(Itemname.BeardPiece);
         GameRegistry.registerItem(beardPiece,
-                modid + beardPiece.getUnlocalizedName());
-        LanguageRegistry.addName(beardPiece, "Beard Piece");
+                Reference.MODID + beardPiece.getUnlocalizedName());
+        LanguageRegistry.addName(beardPiece, Itemname.BeardPiece);
     }
 }
