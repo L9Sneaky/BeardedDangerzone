@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-import com.N00byEdge.BD.*;
+import com.N00byEdge.BD.Bearded_Dangerzone;
 
 public class BlockRawBeard extends Block {
     public BlockRawBeard(int id, Material par2Material) {
