@@ -8,14 +8,13 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class CreativeTabBD extends CreativeTabs {
-    public CreativeTabBD(int par1, String par2Str){
+    public CreativeTabBD(int par1, String par2Str) {
         super(par1, par2Str);
     }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
-    
-    public int getTabIconItemIndex(){
+    public int getTabIconItemIndex() {
         return Ids.BeardPieceID;
     }
 }

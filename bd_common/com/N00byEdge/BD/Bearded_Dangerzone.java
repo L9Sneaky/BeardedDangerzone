@@ -20,7 +20,7 @@ import cpw.mods.fml.common.registry.*;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Bearded_Dangerzone {
     /* Declaring stuff */
-    
+
     public static Block rawBeard;
     public static int rawBeardID;
 
