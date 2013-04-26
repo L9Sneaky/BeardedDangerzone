@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-import com.N00byEdge.BD.Bearded_Dangerzone;
+import com.N00byEdge.BD.lib.*;
 
 public class BlockRawBeard extends Block {
     public BlockRawBeard(int id, Material par2Material) {
@@ -17,7 +17,7 @@ public class BlockRawBeard extends Block {
 
     @Override
     public int idDropped(int par1, Random rand, int par2) {
-        return Bearded_Dangerzone.beardPieceID;
+        return Ids.BeardPieceID;
     }
 
     @Override

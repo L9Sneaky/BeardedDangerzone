@@ -22,10 +22,8 @@ public class Bearded_Dangerzone {
     /* Declaring stuff */
 
     public static Block rawBeard;
-    public static int rawBeardID;
 
     public static Item beardPiece;
-    public static int beardPieceID;
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -48,7 +46,7 @@ public class Bearded_Dangerzone {
 
     private void loadBlocks() {
         /* LOADING BEARD BLOCK */
-        rawBeard = new BlockRawBeard(rawBeardID, Material.rock)
+        rawBeard = new BlockRawBeard(Ids.RawBeardID, Material.rock)
                 .setUnlocalizedName(Blockname.RAWBEARD_NAME);
         GameRegistry.registerBlock(rawBeard,
                 Reference.MODID + rawBeard.getUnlocalizedName2());
@@ -58,7 +56,7 @@ public class Bearded_Dangerzone {
 
     private void loadItems() {
         /* LOADING BEARD PIECE */
-        beardPiece = new ItemBeardPiece(beardPieceID)
+        beardPiece = new ItemBeardPiece(Ids.BeardPieceID)
                 .setUnlocalizedName(Itemname.BEARDPIECE_NAME);
         GameRegistry.registerItem(beardPiece,
                 Reference.MODID + beardPiece.getUnlocalizedName());
