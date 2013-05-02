@@ -1,15 +1,14 @@
 package com.N00byEdge.BD.item;
 
-import com.N00byEdge.BD.creativetab.CreativeTabBD;
+import com.N00byEdge.BD.creativetab.*;
 
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class ItemBeardPiece extends Item {
     public ItemBeardPiece(int id) {
         super(id);
-        this.setCreativeTab(CreativeTabBD());
+        this.setCreativeTab(Creativetab.tabBD);
     }
 
     @Override
