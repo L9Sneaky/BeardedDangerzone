@@ -27,8 +27,14 @@ public class Bearded_Dangerzone {
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
+
+        /* Config */
         Config.Handler(event);
+
+        /* Blocks */
         loadBlocks();
+
+        /* Items */
         loadItems();
     }
 
