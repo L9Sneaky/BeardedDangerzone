@@ -32,12 +32,12 @@ public class WorldGen_BD implements IWorldGenerator {
 
     private void generateSurface(World world, Random random, int chunkX,
             int chunkZ) {
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 10; i++) {
             int coordX = random.nextInt(16) + chunkX;
             int coordY = random.nextInt(64);
             int coordZ = random.nextInt(16) + chunkZ;
 
-            (new WorldGenMinable(Bearded_Dangerzone.rawBeard.blockID, 9))
+            (new WorldGenMinable(Bearded_Dangerzone.rawBeard.blockID, 6))
                     .generate(world, random, coordX, coordY, coordZ);
         }
     }
