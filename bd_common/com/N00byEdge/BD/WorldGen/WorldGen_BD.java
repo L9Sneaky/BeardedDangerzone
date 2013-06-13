@@ -6,12 +6,17 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
-import com.N00byEdge.BD.Bearded_Dangerzone;
+import com.N00byEdge.BD.lib.Booleans;
+import com.N00byEdge.BD.lib.Status;
+import com.N00byEdge.BD.block.LoadBlocks;
+import com.N00byEdge.BD.handlers.*;
 
 import cpw.mods.fml.common.IWorldGenerator;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class WorldGen_BD implements IWorldGenerator {
     // Beard Block Generation //
+    int sent;
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world,
             IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
@@ -36,13 +41,35 @@ public class WorldGen_BD implements IWorldGenerator {
             int coordX = random.nextInt(16) + chunkX;
             int coordY = random.nextInt(64);
             int coordZ = random.nextInt(16) + chunkZ;
+            
+            if (Booleans.RawBeardGenEnabled == true){
+                (new WorldGenMinable(LoadBlocks.rawBeard.blockID, 6))
+                .generate(world, random, coordX, coordY, coordZ);
+                sendmsg();
+            }else{
+                LogHelper.info("World Gen disabled. Will not generate Raw Beard in world.");
+            }
 
-            (new WorldGenMinable(Bearded_Dangerzone.rawBeard.blockID, 6))
-                    .generate(world, random, coordX, coordY, coordZ);
         }
     }
 
     private void generateEnd(World world, Random random, int chunkX, int chunkZ) {
 
+    }
+    
+    private void sendmsg(){
+        if (!(sent == 1)){
+            sent = 0;
+        }
+        
+        if (sent == 0){
+            LogHelper.info("World Gen enabled. Will generate Raw Beard in world.");
+            sent = 1;
+        }
+    }
+    
+    public static void registerGen(){
+        GameRegistry.registerWorldGenerator(new WorldGen_BD());
+        Status.WorldGenLoaded = true;
     }
 }

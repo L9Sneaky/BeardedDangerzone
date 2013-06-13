@@ -16,6 +16,9 @@ public class Config {
                 Blockname.RAWBEARD_NAME, Ids.RawBeardIDDefault).getInt();
         Ids.BeardPieceID = config.get(Configuration.CATEGORY_ITEM,
                 Itemname.BEARDPIECE_NAME, Ids.BeardPieceIDDefault).getInt();
+        Booleans.RawBeardGenEnabled = config.get(
+                Configuration.CATEGORY_GENERAL, Strings.RAW_BEARD_GEN,
+                Booleans.RawBeardGenEnabledDefault).getBoolean(Booleans.RawBeardGenEnabledDefault);
 
         config.save();
         /* CONFIG END */
