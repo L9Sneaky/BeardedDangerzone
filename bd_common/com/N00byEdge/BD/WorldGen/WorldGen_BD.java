@@ -7,8 +7,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
 import com.N00byEdge.BD.lib.Booleans;
-import com.N00byEdge.BD.lib.Status;
-import com.N00byEdge.BD.block.LoadBlocks;
+import com.N00byEdge.BD.lib.Ids;
 import com.N00byEdge.BD.handlers.*;
 
 import cpw.mods.fml.common.IWorldGenerator;
@@ -43,13 +42,12 @@ public class WorldGen_BD implements IWorldGenerator {
             int coordZ = random.nextInt(16) + chunkZ;
             
             if (Booleans.RawBeardGenEnabled == true){
-                (new WorldGenMinable(LoadBlocks.rawBeard.blockID, 6))
+                (new WorldGenMinable(Ids.BeardPieceID, 6))
                 .generate(world, random, coordX, coordY, coordZ);
                 sendmsg();
             }else{
                 LogHelper.info("World Gen disabled. Will not generate Raw Beard in world.");
             }
-
         }
     }
 
@@ -70,6 +68,5 @@ public class WorldGen_BD implements IWorldGenerator {
     
     public static void registerGen(){
         GameRegistry.registerWorldGenerator(new WorldGen_BD());
-        Status.WorldGenLoaded = true;
     }
 }
