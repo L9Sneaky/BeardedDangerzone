@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class InitHandler {
-    public static void pre(FMLPreInitializationEvent event){
+    public static void pre(FMLPreInitializationEvent event) {
         /* Configuration */
         Config.Handler(event);
 
@@ -18,10 +18,12 @@ public class InitHandler {
         /* Items */
         LoadItems.load();
     }
-    public static void init(FMLInitializationEvent event){
+
+    public static void init(FMLInitializationEvent event) {
 
     }
-    public static void post(FMLPostInitializationEvent event){
+
+    public static void post(FMLPostInitializationEvent event) {
 
     }
 }

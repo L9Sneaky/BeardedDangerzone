@@ -15,7 +15,6 @@ public class Creativetab {
     };
 
     public static void InitializeCreativeTabs() {
-        LanguageRegistry.instance().addStringLocalization("itemGroup.tabBD",
-                "en_US", "Bearded Dangerzone");
+        LanguageRegistry.instance().addStringLocalization("itemGroup.tabBD", "en_US", "Bearded Dangerzone");
     }
 }

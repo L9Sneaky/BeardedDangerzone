@@ -12,15 +12,13 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LoadBlocks {
-    
+
     public static Block rawBeard;
-    
-    public static void load(){
+
+    public static void load() {
         /* LOADING BEARD BLOCK */
-        rawBeard = new BlockRawBeard(Ids.RawBeardID, Material.rock)
-                .setUnlocalizedName(Blockname.RAWBEARD_NAME);
-        GameRegistry.registerBlock(rawBeard,
-                Reference.MODID + rawBeard.getUnlocalizedName2());
+        rawBeard = new BlockRawBeard(Ids.RawBeardID, Material.rock).setUnlocalizedName(Blockname.RAWBEARD_NAME);
+        GameRegistry.registerBlock(rawBeard, Reference.MODID + rawBeard.getUnlocalizedName2());
         LanguageRegistry.addName(rawBeard, Blockname.RAWBEARD_NAME);
         WorldGen_BD.registerGen();
     }

@@ -16,9 +16,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class WorldGen_BD implements IWorldGenerator {
     // Beard Block Generation //
     int sent;
+
     @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world,
-            IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
         switch (world.provider.dimensionId) {
             case 1:
                 generateEnd(world, random, chunkX * 16, chunkZ * 16);
@@ -29,24 +29,21 @@ public class WorldGen_BD implements IWorldGenerator {
         }
     }
 
-    private void generateNether(World world, Random random, int chunkX,
-            int chunkZ) {
+    private void generateNether(World world, Random random, int chunkX, int chunkZ) {
 
     }
 
-    private void generateSurface(World world, Random random, int chunkX,
-            int chunkZ) {
+    private void generateSurface(World world, Random random, int chunkX, int chunkZ) {
         for (int i = 0; i < 10; i++) {
             int coordX = random.nextInt(16) + chunkX;
             int coordY = random.nextInt(64);
             int coordZ = random.nextInt(16) + chunkZ;
-            
-            if (Booleans.RawBeardGenEnabled == true){
-                (new WorldGenMinable(Ids.BeardPieceID, 6))
-                .generate(world, random, coordX, coordY, coordZ);
-                sendmsg();
-            }else{
-                LogHelper.info("World Gen disabled. Will not generate Raw Beard in world.");
+
+            if (Booleans.RawBeardGenEnabled == true) {
+                (new WorldGenMinable(Ids.RawBeardID, 6)).generate(world, random, coordX, coordY, coordZ);
+                sendmsg(true);
+            } else {
+                sendmsg(false);
             }
         }
     }
@@ -54,19 +51,23 @@ public class WorldGen_BD implements IWorldGenerator {
     private void generateEnd(World world, Random random, int chunkX, int chunkZ) {
 
     }
-    
-    private void sendmsg(){
-        if (!(sent == 1)){
+
+    private void sendmsg(Boolean enabled) {
+        if (!(sent == 1)) {
             sent = 0;
         }
-        
-        if (sent == 0){
+
+        if (sent == 0 && enabled == true) {
             LogHelper.info("World Gen enabled. Will generate Raw Beard in world.");
+            sent = 1;
+        } else if (sent == 0 && enabled == false) {
+
+            LogHelper.info("World Gen disabled. Will not generate Raw Beard in world.");
             sent = 1;
         }
     }
-    
-    public static void registerGen(){
+
+    public static void registerGen() {
         GameRegistry.registerWorldGenerator(new WorldGen_BD());
     }
 }
