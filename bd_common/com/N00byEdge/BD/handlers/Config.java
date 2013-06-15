@@ -1,4 +1,4 @@
-package com.N00byEdge.BD.config.ConfigHandler;
+package com.N00byEdge.BD.handlers;
 
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

@@ -1,7 +1,6 @@
 package com.N00byEdge.BD.handlers;
 
 import com.N00byEdge.BD.block.LoadBlocks;
-import com.N00byEdge.BD.config.ConfigHandler.Config;
 import com.N00byEdge.BD.item.LoadItems;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
