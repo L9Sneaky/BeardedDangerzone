@@ -1,7 +1,8 @@
 package com.N00byEdge.BD.item;
 
 import net.minecraft.item.Item;
-import com.N00byEdge.BD.creativetab.Creativetab;
+
+import com.N00byEdge.BD.handlers.Creativetab;
 
 public class ItemBeardPiece extends Item {
     public ItemBeardPiece(int id) {

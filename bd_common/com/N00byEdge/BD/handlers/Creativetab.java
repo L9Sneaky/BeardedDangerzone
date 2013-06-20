@@ -1,4 +1,4 @@
-package com.N00byEdge.BD.creativetab;
+package com.N00byEdge.BD.handlers;
 
 import com.N00byEdge.BD.lib.Ids;
 
