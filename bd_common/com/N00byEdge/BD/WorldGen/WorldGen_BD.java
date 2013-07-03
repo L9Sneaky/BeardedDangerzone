@@ -19,13 +19,18 @@ public class WorldGen_BD implements IWorldGenerator {
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-        switch (world.provider.dimensionId) {
-            case 1:
-                generateEnd(world, random, chunkX * 16, chunkZ * 16);
-            case 0:
-                generateSurface(world, random, chunkX * 16, chunkZ * 16);
-            case -1:
-                generateNether(world, random, chunkX * 16, chunkZ * 16);
+
+        if (world.provider.dimensionId == 1) {
+            generateEnd(world, random, chunkX * 16, chunkZ * 16);
+        }
+        else if (world.provider.dimensionId == 0){
+            generateSurface(world, random, chunkX * 16, chunkZ * 16);
+        }
+        else if (world.provider.dimensionId == -1){
+            generateNether(world, random, chunkX * 16, chunkZ * 16); 
+        }
+        else if (world.provider.dimensionId >1){
+            generateSurface(world, random, chunkX * 16, chunkZ * 16);
         }
     }
 
