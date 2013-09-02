@@ -66,7 +66,6 @@ public class WorldGen_BD implements IWorldGenerator {
             LogHelper.info("World Gen enabled. Will generate Raw Beard in world.");
             sent = 1;
         } else if (sent == 0 && enabled == false) {
-
             LogHelper.info("World Gen disabled. Will not generate Raw Beard in world.");
             sent = 1;
         }

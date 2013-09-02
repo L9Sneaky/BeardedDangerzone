@@ -12,17 +12,17 @@ import cpw.mods.fml.common.network.NetworkMod;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Bearded_Dangerzone {
 
-    @PreInit
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         InitHandler.pre(event);
     }
 
-    @Init
+    @EventHandler
     public void load(FMLInitializationEvent event) {
         InitHandler.init(event);
     }
 
-    @PostInit
+    @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         InitHandler.post(event);
     }

@@ -18,7 +18,7 @@ public class LoadBlocks {
     public static void load() {
         /* LOADING BEARD BLOCK */
         rawBeard = new BlockRawBeard(Ids.RawBeardID, Material.rock).setUnlocalizedName(Blockname.RAWBEARD_NAME);
-        GameRegistry.registerBlock(rawBeard, Reference.MODID + rawBeard.getUnlocalizedName2());
+        GameRegistry.registerBlock(rawBeard, Reference.MODID + rawBeard.getUnlocalizedName());
         LanguageRegistry.addName(rawBeard, Blockname.RAWBEARD_NAME);
         WorldGen_BD.registerGen();
     }
