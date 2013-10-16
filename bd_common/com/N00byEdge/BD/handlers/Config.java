@@ -15,6 +15,7 @@ public class Config {
         Ids.BeardBlockID = config.get(Configuration.CATEGORY_BLOCK, Blockname.BEARDBLOCK_NAME, Ids.BeardBlockIDDefault).getInt();
         Ids.BeardPieceID = config.get(Configuration.CATEGORY_ITEM, Itemname.BEARDPIECE_NAME, Ids.BeardPieceIDDefault).getInt();
         Ids.NokiaID = config.get(Configuration.CATEGORY_ITEM, Itemname.NOKIA_NAME, Ids.NokiaIDDefault).getInt();
+        Ids.RawNokiaID = config.get(Configuration.CATEGORY_ITEM, Itemname.RAWNOKIA_NAME, Ids.RawNokiaIDDefault).getInt();
         Booleans.RawBeardGenEnabled = config.get(Configuration.CATEGORY_GENERAL, Strings.RAW_BEARD_GEN, Booleans.RawBeardGenEnabledDefault).getBoolean(Booleans.RawBeardGenEnabledDefault);
 
         config.save();

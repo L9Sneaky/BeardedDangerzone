@@ -5,4 +5,5 @@ import net.minecraft.item.Item;
 public class BDItems {
     public static Item beardPiece;
     public static Item nokia;
+    public static Item rawNokia;
 }
