@@ -3,8 +3,6 @@ package com.N00byEdge.BD.handlers;
 import com.N00byEdge.BD.WorldGen.WorldGen_BD;
 import com.N00byEdge.BD.block.LoadBlocks;
 import com.N00byEdge.BD.item.LoadItems;
-import com.N00byEdge.BD.lib.Reference;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -26,11 +24,13 @@ public class InitHandler {
 
         /* Items */
         LoadItems.load();
+        
+        /* Recipes */
+        RecipeHandler.loadRecipies();
+
     }
 
     public static void init(FMLInitializationEvent event) {
-        /* Recipes */
-        RecipeHandler.loadRecipies();
     }
 
     public static void post(FMLPostInitializationEvent event) {
@@ -49,7 +49,7 @@ public class InitHandler {
     
     public static boolean checkMod(String mod){
     	if(Loader.isModLoaded(mod)){
-        	LogHelper.info("I found " + mod + "YAY!");
+        	LogHelper.info("I found " + mod + ". YAY!");
         	return true;
         }else{
         	LogHelper.info("The mod " + mod + " was not found.");
@@ -58,6 +58,5 @@ public class InitHandler {
     }
     
     public static void checkIntegration(){
-    	
     }
 }
