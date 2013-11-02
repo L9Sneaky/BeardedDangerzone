@@ -3,6 +3,8 @@ package com.N00byEdge.BD.handlers;
 import com.N00byEdge.BD.WorldGen.WorldGen_BD;
 import com.N00byEdge.BD.block.LoadBlocks;
 import com.N00byEdge.BD.item.LoadItems;
+import com.N00byEdge.BD.lib.Reference;
+
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -14,7 +16,7 @@ public class InitHandler {
     	n00behCheck();
     	
     	/* Other Mods*/
-    	
+    	checkIntegration();
     	
         /* Configuration */
         Config.Handler(event);
@@ -25,12 +27,11 @@ public class InitHandler {
         /* Items */
         LoadItems.load();
         
-        /* Recipes */
-        RecipeHandler.loadRecipies();
-
     }
 
     public static void init(FMLInitializationEvent event) {
+        /* Recipes */
+        RecipeHandler.loadRecipies();
     }
 
     public static void post(FMLPostInitializationEvent event) {
@@ -58,5 +59,10 @@ public class InitHandler {
     }
     
     public static void checkIntegration(){
+    	if(checkMod("IC2")){
+    		Reference.IC2INTEGRATION = true;
+    	}else{
+    		Reference.IC2INTEGRATION = false;
+    	}
     }
 }

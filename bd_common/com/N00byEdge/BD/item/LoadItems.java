@@ -9,6 +9,7 @@ public class LoadItems {
     public static void load() {
         beardPieceLoad();
         nokiaLoad();
+        nokiaPieceLoad();
     }
     public static void beardPieceLoad(){
         BDItems.beardPiece = new ItemBeardPiece(Ids.BeardPieceID).setUnlocalizedName(Itemname.BEARDPIECE_NAME);

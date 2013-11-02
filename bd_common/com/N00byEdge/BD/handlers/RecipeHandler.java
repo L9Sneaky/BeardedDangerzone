@@ -3,12 +3,13 @@ package com.N00byEdge.BD.handlers;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import com.N00byEdge.BD.lib.*;
 import com.N00byEdge.BD.block.BDBlocks;
 import com.N00byEdge.BD.item.*;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-
+@SuppressWarnings("unused")
 public class RecipeHandler {
 	
 	private static ItemStack singleBeardPiece = new ItemStack(BDItems.beardPiece, 1);
@@ -65,12 +66,13 @@ public class RecipeHandler {
 		GameRegistry.addRecipe(output, "xx", "xx",
 		        'x', input);
 	}
-	/*
-	private static void ringAroundNothingCrafting(ItemStack input, ItemStack output){
+	
+	private static void ringCrafting(ItemStack input, ItemStack output){
 		GameRegistry.addRecipe(output, "xxx", "x x", "xxx",
 		        'x', input);
 	}
-	*/
+	
+
 	private static void ringAroundSometingCrafting(ItemStack ring, ItemStack middle, ItemStack output){
 		GameRegistry.addRecipe(output, "xxx", "xyx", "xxx",
 		        'x', ring, 'y', middle);
@@ -86,6 +88,7 @@ public class RecipeHandler {
 	 * MOD INTEGRATION:
 	 * 
 	 * *IC2
+	 * 
 	 */
 	
 	
