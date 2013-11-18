@@ -9,13 +9,14 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class InitHandler {
     public static void pre(FMLPreInitializationEvent event) {
     	/* N00beh Check */
     	n00behCheck();
     	
-    	/* Other Mods*/
+    	/* Other Mods */
     	checkIntegration();
     	
         /* Configuration */
@@ -26,6 +27,9 @@ public class InitHandler {
 
         /* Items */
         LoadItems.load();
+        
+        /* Fuel */
+        GameRegistry.registerFuelHandler(new BDFuelHandler());
         
     }
 

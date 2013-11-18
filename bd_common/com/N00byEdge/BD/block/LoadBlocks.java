@@ -23,5 +23,9 @@ public class LoadBlocks {
         BDBlocks.beardBlock = new BlockRawBeard(Ids.BeardBlockID, Material.rock).setUnlocalizedName(Blockname.BEARDBLOCK_NAME);
         GameRegistry.registerBlock(BDBlocks.beardBlock, Reference.MODID + BDBlocks.beardBlock.getUnlocalizedName());
         LanguageRegistry.addName(BDBlocks.beardBlock, Blockname.BEARDBLOCK_NAME);
+        
+        BDBlocks.beardInfusion = new BlockBeardInfusion(Ids.BeardInfusionID, Material.rock).setUnlocalizedName(Blockname.BEARDINFUSION_NAME);
+        GameRegistry.registerBlock(BDBlocks.beardInfusion, Reference.MODID + BDBlocks.beardInfusion.getUnlocalizedName());
+        LanguageRegistry.addName(BDBlocks.beardInfusion, Blockname.BEARDINFUSION_NAME);
     }
 }

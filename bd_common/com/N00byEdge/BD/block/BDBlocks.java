@@ -5,4 +5,5 @@ import net.minecraft.block.Block;
 public class BDBlocks {
 	public static Block rawBeard;
 	public static Block beardBlock;
+	public static Block beardInfusion;
 }
