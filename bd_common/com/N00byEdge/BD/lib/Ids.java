@@ -13,6 +13,9 @@ public class Ids {
     public static int RawNokiaIDDefault = 4893;
     public static int NokiaIDDefault = 4892;
     
+    /* Nokia-related Block Defaults */
+    public static int RawNokiumBlockIDDefault = 443;
+    
     /* Beard-related Items*/
     public static int BeardPieceID;
     
@@ -24,4 +27,7 @@ public class Ids {
 	/* Nokia Related Items */
     public static int NokiaID;
     public static int RawNokiaID;
+    
+    /* Nokia-realted Blocks */
+    public static int RawNokiumBlockID;
 }
